@@ -1,6 +1,8 @@
 from os import listdir, getcwd
 from subprocess import call
+from checkIfScss import checkIfScss
 
 
-for scssFile in listdir ():
-    print (scssFile)
+for file in listdir ():
+    if checkIfScss (file):
+

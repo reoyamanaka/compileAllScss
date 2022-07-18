@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-from checkIfScss import checkIfScss
+from utils import checkIfScss
 
 
 class TestCheckIfSss (TestCase):
