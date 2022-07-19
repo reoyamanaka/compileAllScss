@@ -6,7 +6,7 @@ def checkIfScss (inputFileName: str) -> bool:
     return splitAtPeriods[len (splitAtPeriods) - 1].lower () == "scss"
 
 
-def getExtensionlessName (inputFileName: str) -> str:
+def getNameWithoutScssExtension (inputFileName: str) -> str:
     """Returns the string of the input file name without the extension.
     """
     if "scss" not in inputFileName.lower ():
@@ -14,4 +14,4 @@ def getExtensionlessName (inputFileName: str) -> str:
 
     splitAtPeriods = inputFileName.split (".")
     scssRemovedList = splitAtPeriods [:len (splitAtPeriods) - 1]
-    return scssRemovedList.join (".")
+    return ".".join (scssRemovedList)
