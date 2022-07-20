@@ -1,12 +1,14 @@
-from os import listdir, getcwd, system
+from os import listdir, getcwd, system, walk
 from subprocess import call
 from utils import checkIfScss, getNameWithoutScssExtension
 
 
-for file in listdir ():
-    if checkIfScss (file):
-        nameWithoutScssExtension = getNameWithoutScssExtension (file)
-        outputName = file.replace (".scss", ".css")
+for root, dirs, files in walk (getcwd ()):
+    for fileName in files: 
+        # print (f"fileName: {fileName}")
+        if checkIfScss (fileName):
+            print (f"Compiling SCSS file with name: {fileName}")
+            nameWithoutScssExtension = getNameWithoutScssExtension (fileName)
+            outputName = fileName.replace (".scss", ".css")
 
-        system (f"sass {file} {file.replace ('.scss', '.css')}") 
-
+            system (f"sass {root}/{fileName} {root}/{fileName.replace ('.scss', '.css')}") 
