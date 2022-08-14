@@ -11,4 +11,4 @@ for root, dirs, files in walk (getcwd ()):
             nameWithoutScssExtension = getNameWithoutScssExtension (fileName)
             outputName = fileName.replace (".scss", ".css")
 
-            system (f"sass {root}/{fileName} {root}/{fileName.replace ('.scss', '.css')}") 
+            system (f"sass {root}/{fileName} {root}/{nameWithoutScssExtension + '.css'}") 

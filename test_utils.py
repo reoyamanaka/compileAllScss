@@ -14,7 +14,7 @@ class TestUtils (TestCase):
         self.assertEqual (getNameWithoutScssExtension ("asdf.pdf"), "asdf.pdf")
         self.assertEqual (getNameWithoutScssExtension ("asdf.pdf.scss"), "asdf.pdf")
         self.assertEqual (getNameWithoutScssExtension ("asdf"), "asdf")
-
+        self.assertEqual (getNameWithoutScssExtension ("asdf.scss.scss"), "asdf.scss")
 
 
 if __name__ == "__main__":
